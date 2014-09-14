@@ -11,22 +11,18 @@ import android.content.Context;
  * Contains a list of Achievements. Retrieves and stores achievements upon request.
  */
 public class AchievementManager {
+
+	private static List<Achievement> achievements;
+	private static AchievementStorage storage;
+	private static int numAchievements;
+	private static int numCompleted;
 	
-	private Context context;
-	private List<Achievement> achievements;
-	private AchievementStorage storage;
-	private int numAchievements;
-	private int numCompleted;
-	
-	public AchievementManager(Context context) {
+	public static void initialize(Context context) {
 		achievements = new ArrayList<Achievement>();
 		storage = new AchievementStorage(context);
 		numAchievements = Integer.valueOf(context.getString(R.string.num_achievements));
 		numCompleted = 0;
-		this.context = context;
-	}
-	
-	public List<Achievement> retrieveAchievements() {
+		
 		int resID;
 		String key;
 		String[] stringArray;
@@ -41,10 +37,17 @@ public class AchievementManager {
 			if (achievement.isCompleted()) numCompleted++;
 			achievements.add(achievement);
 		}
+	}
+	
+	public static List<Achievement> getAchievements() {
 		return achievements;
 	}
 	
-	public void storeAchievements() {
+	public static Achievement getAchievement(int index) {
+		return (index >= 0 && index < achievements.size()) ? achievements.get(index) : null;
+	}
+	
+	public static void storeAchievements() {
 		String key;
 		for (int i = 1; i <= numAchievements; ++i) {
 			key = "achievement_" + i;
@@ -52,15 +55,15 @@ public class AchievementManager {
 		}
 	}
 	
-	public int getNumCompleted() {
+	public static int getNumCompleted() {
 		return numCompleted;
 	}
 	
-	public int getNumAchievements() {
+	public static int getNumAchievements() {
 		return numAchievements;
 	}
 	
-	public void clearAchievements() {
+	public static void clearAchievements() {
 		for (int i = 0; i < numAchievements; ++i) {
 			achievements.get(i).clear();
 		}
