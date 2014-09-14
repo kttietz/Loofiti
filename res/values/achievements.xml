@@ -8,4 +8,13 @@
         <item>0</item>
     </string-array>
     
+    <string-array name="achievement_2">
+        <item>Achievement 2</item>
+        <item>Earned for doing 10 things.</item>
+        <item>250</item>
+        <item>10</item>
+    </string-array>
+    
+    <string name="num_achievements">2</string>
+    
 </resources>
