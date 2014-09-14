@@ -85,7 +85,10 @@ public class LocationFinder {
 		manager.removeUpdates(listener);
 		Location returnLocation = bestLocation;
 		listening = false;
-		bestLocation = null;
 		return returnLocation;
+	}
+	
+	public static Location getLastLocation() {
+		return bestLocation;
 	}
 }

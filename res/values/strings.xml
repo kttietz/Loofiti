@@ -2,8 +2,13 @@
 <resources>
 
     <string name="app_name">Loofiti</string>
-    <string name="hello_world">HackISU, biatch!</string>
     <string name="action_settings">Settings</string>
+    
+    <string name="q_closest">Are you in this bathroom?</string>
+    <string name="bldg_closest">No Results</string>
+    <string name="text_nearby">Other bathrooms nearby...</string>
+    <string name="yes">yes</string>
+    
     <string name="session_count">sessionCount</string>
     <string name="user_experience">userExperience</string>
     <string name="user_level">userLevel</string>
