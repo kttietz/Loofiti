@@ -11,6 +11,23 @@ public class MyPath extends Path implements Serializable {
 
 	private ArrayList<float[]> pathPoints = new ArrayList<float[]>();
 	
+	public MyPath()
+	{
+		super();
+	}
+	
+	public MyPath(String ser)
+	{
+		this();
+		
+		String[] pairs = ser.split(";");
+		for (String pair : pairs)
+		{
+			String[] xy = pair.split(",");
+			pathPoints.add(new float[] {Float.parseFloat(xy[0]), Float.parseFloat(xy[1]) });
+		}
+	}
+	
 	private int pathColor = Color.BLACK;
 	private boolean isErase = false;
 	
@@ -35,5 +52,14 @@ public class MyPath extends Path implements Serializable {
 		pathPoints.add(new float[]{x,y});
 	}
 
-
+	public String toString()
+	{
+		String ret = "";
+		for (float[] pair : pathPoints)
+		{
+			ret += pair[0] + "," + pair[1] + ";";
+		}
+		
+		return ret;
+	}
 }

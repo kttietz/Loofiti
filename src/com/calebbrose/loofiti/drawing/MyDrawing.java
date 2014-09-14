@@ -9,12 +9,39 @@ public class MyDrawing implements Serializable {
 	
 	private ArrayList<MyPath> pathList = new ArrayList<MyPath>();
 	
+	public MyDrawing()
+	{
+		super();
+	}
+	
+	public MyDrawing(String ser)
+	{
+		this();
+		
+		String[] paths = ser.split(" ");
+		for (String path : paths)
+		{
+			pathList.add(new MyPath(path));
+		}
+	}
+	
 	public void addPath(MyPath p) {
 		pathList.add(p);
 	}
 	
 	public ArrayList<MyPath> getPathList(){
 		return pathList;
+	}
+	
+	public String toString()
+	{
+		String ret = "";
+		for (MyPath path : pathList)
+		{
+			ret += path.toString() + " " ;
+		}
+		
+		return ret;
 	}
 	
 }

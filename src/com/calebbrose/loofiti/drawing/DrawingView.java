@@ -49,7 +49,8 @@ public class DrawingView extends View {
 		canvasPaint = new Paint(Paint.DITHER_FLAG);
 		
 		//****Figure out where to grab the Stall to draw
-		currStallWall = new StallWall("NEW");
+		currStallWall = new StallWall("Pearson");
+//		currStallWall.getDrawingsFromDatabase();
 	}
 	
 	@Override

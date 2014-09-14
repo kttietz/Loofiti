@@ -17,7 +17,7 @@ public class StallActivity extends Activity implements OnClickListener {
 
 	private DrawingView drawView;
 	
-	private ImageButton currPaint, drawBtn, eraseBtn, newBtn, saveBtn;
+	private ImageButton currPaint, drawBtn, eraseBtn, newBtn, flushBtn;
 	
 	//private Stall currStall;
 	
@@ -39,11 +39,11 @@ public class StallActivity extends Activity implements OnClickListener {
         eraseBtn = (ImageButton)findViewById(R.id.erase_btn);
         eraseBtn.setOnClickListener(this);
         
-        newBtn = (ImageButton)findViewById(R.id.new_btn);
-        newBtn.setOnClickListener(this);
+        //newBtn = (ImageButton)findViewById(R.id.new_btn);
+        //newBtn.setOnClickListener(this);
         
-        saveBtn = (ImageButton)findViewById(R.id.save_btn);
-        saveBtn.setOnClickListener(this);
+        flushBtn = (ImageButton)findViewById(R.id.flush_btn);
+        flushBtn.setOnClickListener(this);
         
     }
 
@@ -81,11 +81,11 @@ public class StallActivity extends Activity implements OnClickListener {
     		drawView.setErase(true);
     	}		    		
     		
-    	else if(view.getId()==R.id.new_btn){
-    		drawView.startNew();
-    	}
+    	//else if(view.getId()==R.id.new_btn){
+    	//	drawView.startNew();
+    	//}
     	
-    	else if (view.getId()==R.id.save_btn){
+    	else if (view.getId()==R.id.flush_btn){
     		//save drawing
     		AlertDialog.Builder newDialog = new AlertDialog.Builder(this);
     		newDialog.setTitle("Flush");
