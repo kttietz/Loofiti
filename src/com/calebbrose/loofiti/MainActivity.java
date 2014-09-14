@@ -9,12 +9,17 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 	ListView listView;
+	String[] bldgArray;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +29,8 @@ public class MainActivity extends ActionBarActivity {
 		//TextView text = (TextView) findViewById(R.id.dispText);
 		//text.setText(new WallRequester().connect("http://www.google.com"));
 		
-		
 		listView = (ListView)findViewById(R.id.buildings);
-		
 		List<String> list = new ArrayList<String>();
-		
 		
 		//populate list from string
 		//URL: 173.28.253.204/Loofiti/loofiti.php?x=_y=_
@@ -36,17 +38,15 @@ public class MainActivity extends ActionBarActivity {
 		// Coover: x = 100, y = 100
 		// Howe: x = 200, y = 200
 		// Pearson: ?? near Black
+		int x = 100, y = 150;
 		
-		String bldgList = new WallRequester().connect("http://173.28.253.204/Loofiti/loofiti.php?x=100&y=100");
+		String bldgList = new WallRequester().connect("http://173.28.253.204/Loofiti/loofiti.php?x="+x+"&y="+y);
 		//System.out.println(bldgList);
 		
 		//TextView text = (TextView) findViewById(R.id.select_closest);
 		//text.setText(bldgList);
 		
-		
-		String[] bldgArray = bldgList.split(" ");
-		
-		
+		bldgArray = bldgList.split(" ");
 		
 		TextView text = (TextView) findViewById(R.id.bldg_closest);
 		text.setText(bldgArray[1]);
@@ -60,6 +60,14 @@ public class MainActivity extends ActionBarActivity {
         
         //assign Adapter to ListView
         listView.setAdapter(adapter);
+    	
+    	listView.setOnItemClickListener(new OnItemClickListener() {
+    		@Override
+    		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    			// TODO Auto-generated method stub
+    			switchScreen(view, position + 2);
+    		}
+    	});
 	}
 
 	@Override
@@ -81,8 +89,19 @@ public class MainActivity extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-	public void switchScreen(View view){
+	public void switchScreen(View view, int index) {
+		//send info of selected building to database, Sam takes data for deserializing
+		
 		Intent intent = new Intent(this, StallActivity.class);
+		intent.putExtra("building", bldgArray[index]);
+		startActivity(intent);
+	}
+	
+	public void switchScreenClosest(View view) {
+		//send info of selected building to database, Sam takes data for deserializing
+		
+		Intent intent = new Intent(this, StallActivity.class);
+		intent.putExtra("building", bldgArray[1]);
 		startActivity(intent);
 	}
 	

@@ -8,7 +8,10 @@
     <string name="q_closest">Are you in this bathroom?</string>
     <string name="bldg_closest">No Results</string>
     <string name="text_nearby">Other bathrooms nearby...</string>
-    <string name="yes">yes</string>
+    <string name="yes">Yes!</string>
+    
+    <string name="bldg_draw">Building</string>
+    
     
     <string name="session_count">sessionCount</string>
     <string name="user_experience">userExperience</string>

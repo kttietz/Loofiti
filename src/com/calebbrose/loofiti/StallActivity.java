@@ -3,6 +3,7 @@ package com.calebbrose.loofiti;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.calebbrose.loofiti.drawing.DrawingView;
@@ -32,7 +34,14 @@ public class StallActivity extends Activity implements OnClickListener {
         
         setContentView(R.layout.activity_stall);
         
+        /*grab building name*/
+        Intent intent = getIntent();
+        String bldgName = intent.getStringExtra("building");
         
+        //test if building name is correct
+        TextView text = (TextView) findViewById(R.id.bldg_draw);
+		text.setText(bldgName);
+		/*end grab building name*/
         
         
         drawView = (DrawingView)findViewById(R.id.drawing);

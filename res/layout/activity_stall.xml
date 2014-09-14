@@ -37,6 +37,12 @@
             android:contentDescription="@string/save"
             android:src="@drawable/save" />      
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/bldg_draw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bldg_draw" />
             
     <com.calebbrose.loofiti.drawing.DrawingView
         android:id="@+id/drawing"
