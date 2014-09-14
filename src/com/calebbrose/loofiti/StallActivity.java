@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -24,7 +25,15 @@ public class StallActivity extends Activity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        //Action Bar appears then disappears
+      	getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+      	getActionBar().hide();
+        
         setContentView(R.layout.activity_stall);
+        
+        
+        
         
         drawView = (DrawingView)findViewById(R.id.drawing);
         

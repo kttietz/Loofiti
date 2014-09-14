@@ -16,10 +16,12 @@ import android.os.AsyncTask;
 public class WallRequester 
 {
 
+	
+	
 	public String connect(String url)
 	{   
 		try {
-			return new Requestor().execute().get();
+			return new Requestor(url).execute().get();
 		} catch (Exception e) { return "";} 
 	}
 
@@ -50,13 +52,17 @@ public class WallRequester
 	    
 	private class Requestor extends AsyncTask<Void, Void, String>
 	{
-
+		String dataUrl;
+		public Requestor (String url) {
+			dataUrl = url;
+		}
+		
 		@Override
 		protected String doInBackground(Void... params) {
 		    String result = "";
 			
 		    HttpClient httpclient = new DefaultHttpClient();
-		    HttpGet httpget = new HttpGet("http://www.google.com"); 
+		    HttpGet httpget = new HttpGet(dataUrl); 
 
 		    try {
 		    	HttpResponse response = httpclient.execute(httpget);
