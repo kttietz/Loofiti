@@ -75,6 +75,11 @@ public class Achievement {
 	public int getTotal() {
 		return total;
 	}
+	
+	public void clear() {
+		setCompleted(false);
+		setProgress(0);
+	}
 
 	// Complete the achievement, and return true if achievement was not previously completed.
 	// In this way, the achievement can only be completed once.

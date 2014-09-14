@@ -5,6 +5,9 @@ import com.calebbrose.loofiti.R;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+/**
+ * Faciliates shared preferences storage of Achievements objects
+ */
 public class AchievementStorage {
 	
 	private SharedPreferences prefs;
@@ -30,5 +33,4 @@ public class AchievementStorage {
 		}
 		return new Achievement(title, description, experience, completed);
 	}
-
 }
