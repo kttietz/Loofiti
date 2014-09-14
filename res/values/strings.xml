@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Loofiti</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="session_count">sessionCount</string>
+    <string name="user_experience">userExperience</string>
+    <string name="user_level">userLevel</string>
+    <string name="last_location">lastLocation</string>
+    <string name="last_date">lastDate</string>
+    <string name="total_time">totalTime</string>
+    <string name="pref_name">prefData</string>
+    
+
+
+</resources>
