@@ -18,7 +18,6 @@
         android:textColor="#EEBBDD"
         android:textSize="12sp"
         android:text="@string/q_closest" />
->>>>>>> 1a98cbdcf71995c73b61feed36258f8e209f5198
 
     <TextView
         android:id="@+id/bldg_closest"
@@ -28,6 +27,7 @@
         android:layout_marginLeft="10dp"
         android:layout_below="@+id/text_closest"
         android:textSize="20sp"
+        android:text="@string/bldg_closest" />
         android:text="@string/bldg_closest" />
     
     <Button

@@ -1,14 +1,9 @@
 package com.calebbrose.loofiti;
 
-<<<<<<< HEAD
-import com.calebbrose.loofiti.location.LocationFinder;
-=======
 import java.util.ArrayList;
 import java.util.List;
->>>>>>> 1a98cbdcf71995c73b61feed36258f8e209f5198
 
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -26,15 +21,6 @@ public class MainActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-<<<<<<< HEAD
-		Location location = LocationFinder.getLastLocation();
-		
-		TextView text = (TextView) findViewById(R.id.dispText);
-		if (location != null)
-			text.setText(location.toString());
-		else
-			text.setText("Didn't find a location...");
-=======
 		//TextView text = (TextView) findViewById(R.id.dispText);
 		//text.setText(new WallRequester().connect("http://www.google.com"));
 		
@@ -74,7 +60,6 @@ public class MainActivity extends ActionBarActivity {
         
         //assign Adapter to ListView
         listView.setAdapter(adapter);
->>>>>>> 1a98cbdcf71995c73b61feed36258f8e209f5198
 	}
 
 	@Override
