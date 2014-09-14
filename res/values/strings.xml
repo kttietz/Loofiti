@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">Loofiti</string>
-    <string name="hello_world">HackISU, biatch!</string>
     <string name="action_settings">Settings</string>
     
     <string name="q_closest">Are you in this bathroom?</string>

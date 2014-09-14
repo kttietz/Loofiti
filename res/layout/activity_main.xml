@@ -25,6 +25,7 @@
         android:layout_below="@+id/text_closest"
         android:textSize="24sp"
         android:text="@string/bldg_closest" />
+        android:text="@string/bldg_closest" />
     
     <Button
         android:id="@+id/select_closest"

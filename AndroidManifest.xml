@@ -19,9 +19,15 @@
         <activity
             android:name="com.calebbrose.loofiti.MainActivity"
             android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.calebbrose.loofiti.SplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+ 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
