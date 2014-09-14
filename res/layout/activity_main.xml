@@ -2,22 +2,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="top"
     tools:context="com.calebbrose.loofiti.MainActivity" >
 
     <TextView
-        android:id="@+id/dispText"
+        android:id="@+id/text_closest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="#EEBBDD"
+        android:textSize="12sp"
+        android:text="@string/q_closest" />
 
+    <TextView
+        android:id="@+id/bldg_closest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/text_closest"
+        android:textSize="24sp"
+        android:text="@string/bldg_closest" />
+        android:text="@string/bldg_closest" />
+    
     <Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/bathroom"
-    android:onClick="switchScreen" />
+        android:id="@+id/select_closest"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_closest"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30sp"
+        android:padding="2sp"
+        android:layout_alignParentRight="true"
+        android:text="@string/yes" 
+        android:onClick="switchScreenClosest"/>
+    
+    
+    <TextView
+        android:id="@+id/text_nearby"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/select_closest"
+        android:layout_centerHorizontal="true"
+        android:text="@string/text_nearby"
+        android:textColor="#EEBBDD"
+        android:textSize="14sp" />
+    
+    <ListView
+        android:id="@+id/buildings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/text_nearby"
+        android:padding="5sp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:textSize="12sp" >
+
+    </ListView>
+
 
 </RelativeLayout>

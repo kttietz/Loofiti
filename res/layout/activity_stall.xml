@@ -11,27 +11,38 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:orientation="horizontal">
+        
+        <ImageButton
+            android:id="@+id/new_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/start_new"
+            android:src="@drawable/new_pic" />
+        <ImageButton
+            android:id="@+id/draw_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/brush"
+            android:src="@drawable/brush" />
         <ImageButton
             android:id="@+id/erase_btn"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:contentDescription="@string/erase"
-            android:src="@drawable/erase" />
+            android:src="@drawable/eraser" />
         <ImageButton
-            android:id="@+id/flush_btn"
+            android:id="@+id/save_btn"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:contentDescription="@string/flush"
-            android:src="@drawable/toilet" />   
-        <ImageButton
-        android:id="@+id/draw_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:contentDescription="@string/draw"
-        android:src="@drawable/pencil" />   
+            android:contentDescription="@string/save"
+            android:src="@drawable/save" />      
     </LinearLayout>
 
-
+    <TextView
+        android:id="@+id/bldg_draw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bldg_draw" />
             
     <com.calebbrose.loofiti.drawing.DrawingView
         android:id="@+id/drawing"
@@ -97,11 +108,11 @@
 	           android:layout_width="@dimen/large_brush"
 	           android:layout_height="@dimen/large_brush"
 	           android:layout_margin="2dp"
-	           android:background="#FF4F34A0"
+	           android:background="#FFFFCC00"
 	           android:contentDescription="@string/paint"
 	           android:onClick="paintClicked"
 	           android:src="@drawable/paint"
-	           android:tag="#FF4F34A0" />
+	           android:tag="#FFFFCC00" />
 	       <ImageButton 
 	           android:layout_width="@dimen/large_brush"
 	           android:layout_height="@dimen/large_brush"
@@ -112,7 +123,7 @@
 	           android:src="@drawable/paint"
 	           android:tag="#FF009999" />
 	   </LinearLayout>
-	   <!-- Bottom Row
+	   <!-- Bottom Row -->
 	   <LinearLayout
 	       android:layout_width="wrap_content"
 	       android:layout_height="wrap_content"
@@ -171,7 +182,7 @@
 	           android:onClick="paintClicked"
 	           android:src="@drawable/paint"
 	           android:tag="#FF000000" />
-	   </LinearLayout>    -->
+	   </LinearLayout>    
  
     </LinearLayout>
         
