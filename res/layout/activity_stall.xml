@@ -22,7 +22,7 @@
             android:id="@+id/draw_btn"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:contentDescription="@string/brush"
+            android:contentDescription="@string/draw"
             android:src="@drawable/brush" />
         <ImageButton
             android:id="@+id/erase_btn"
@@ -34,7 +34,7 @@
             android:id="@+id/save_btn"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:contentDescription="@string/save"
+            android:contentDescription="@string/flush"
             android:src="@drawable/save" />      
     </LinearLayout>
 

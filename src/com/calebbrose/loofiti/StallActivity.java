@@ -60,7 +60,7 @@ public class StallActivity extends Activity implements OnClickListener {
         //newBtn = (ImageButton)findViewById(R.id.new_btn);
         //newBtn.setOnClickListener(this);
         
-        flushBtn = (ImageButton)findViewById(R.id.flush_btn);
+        flushBtn = (ImageButton)findViewById(R.id.save_btn);
         flushBtn.setOnClickListener(this);
         
     }
@@ -103,7 +103,7 @@ public class StallActivity extends Activity implements OnClickListener {
     	//	drawView.startNew();
     	//}
     	
-    	else if (view.getId()==R.id.flush_btn){
+    	else if (view.getId()==R.id.save_btn){
     		//save drawing
     		AlertDialog.Builder newDialog = new AlertDialog.Builder(this);
     		newDialog.setTitle("Flush");

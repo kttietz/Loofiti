@@ -8,10 +8,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-import com.calebbrose.loofiti.WallRequester;
-
 import android.os.StrictMode;
-import android.util.Log;
+
+import com.calebbrose.loofiti.WallRequester;
 
 public class StallWall {
 	
@@ -34,7 +33,11 @@ public class StallWall {
 	public void getDrawingsFromDatabase() {
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy); 
-			
+		
+		new WallRequester().connect(
+				"http://173.28.253.204/Loofiti/loofiti.php?", new String[] { "x", "y", "b" }, new String[] { "30", "23", building });
+		
+		/*
 		URL url;
 		HttpURLConnection urlCon = null;
 		Object reply = null;
@@ -63,6 +66,7 @@ public class StallWall {
 	            ex.printStackTrace();
 	            System.err.println("*");
 	    }
+	    */
 	}
 
 	//set the currSession to a new drawing layer and return it
@@ -93,19 +97,19 @@ public class StallWall {
 			String str = "";
 			for (MyDrawing drawing : prevOnWall)
 			{
-				str += drawing.toString() + "|";
+				str += drawing.toString() + ":";
 			}
 			
-			String path = "http://173.28.253.204/Loofiti/loofiti.php?b=" + building + "&d=" + str;
-			new WallRequester().connect(path);
+			new WallRequester().connect(
+					"http://173.28.253.204/Loofiti/loofiti.php?", new String[] { "b", "d" }, new String[] { building, str });
 		
 			/*
 		try{
 			
-			url = new URL();
+			url = new URL(path);
 			urlCon = (HttpURLConnection) url.openConnection();
 			
-			urlCon.setRequestMethod("GET");
+			urlCon.setRequestMethod("POST");
 			
 			//String urlParameters = "b=" + stallName + "&d=";
 			urlCon.setDoInput(true);
@@ -134,15 +138,14 @@ public class StallWall {
 	            ex.printStackTrace();
 	            System.err.println("*");
 	    }
-	    */
-		
+*/
 	}
 	
 	void parseSerializedString(String str)
 	{
 		this.prevOnWall = new ArrayList<MyDrawing>();
 		
-		String[] drawings = str.split("|");
+		String[] drawings = str.split(":");
 		for (String drawing : drawings)
 		{
 			prevOnWall.add(new MyDrawing(drawing));

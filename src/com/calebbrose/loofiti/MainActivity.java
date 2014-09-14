@@ -9,11 +9,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -40,7 +38,8 @@ public class MainActivity extends ActionBarActivity {
 		// Pearson: ?? near Black
 		int x = 100, y = 150;
 		
-		String bldgList = new WallRequester().connect("http://173.28.253.204/Loofiti/loofiti.php?x="+x+"&y="+y);
+		String bldgList = new WallRequester()
+			.connect("http://173.28.253.204/Loofiti/loofiti.php?", new String[] { "x", "y" }, new String[] { ""+x, ""+y });
 		//System.out.println(bldgList);
 		
 		//TextView text = (TextView) findViewById(R.id.select_closest);
@@ -64,7 +63,6 @@ public class MainActivity extends ActionBarActivity {
     	listView.setOnItemClickListener(new OnItemClickListener() {
     		@Override
     		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-    			// TODO Auto-generated method stub
     			switchScreen(view, position + 2);
     		}
     	});

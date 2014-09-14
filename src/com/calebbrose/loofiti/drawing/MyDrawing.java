@@ -18,7 +18,7 @@ public class MyDrawing implements Serializable {
 	{
 		this();
 		
-		String[] paths = ser.split(" ");
+		String[] paths = ser.split("_");
 		for (String path : paths)
 		{
 			pathList.add(new MyPath(path));
@@ -38,7 +38,7 @@ public class MyDrawing implements Serializable {
 		String ret = "";
 		for (MyPath path : pathList)
 		{
-			ret += path.toString() + " " ;
+			ret += path.toString() + "_" ;
 		}
 		
 		return ret;
