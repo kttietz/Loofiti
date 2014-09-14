@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Loofiti</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">HackISU, biatch!</string>
     <string name="action_settings">Settings</string>
     <string name="session_count">sessionCount</string>
     <string name="user_experience">userExperience</string>

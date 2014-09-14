@@ -13,9 +13,9 @@ public class MainActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		TextView text = (TextView) findViewById(R.id.dispText);
+		//TextView text = (TextView) findViewById(R.id.dispText);
 		
-		text.setText(new WallRequester().connect("http://www.google.com"));
+		//text.setText(new WallRequester().connect("http://www.google.com"));
 	}
 
 	@Override
