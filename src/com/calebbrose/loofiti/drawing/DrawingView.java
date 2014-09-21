@@ -7,11 +7,13 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.view.MotionEvent;
-import android.view.View;
-import android.util.AttributeSet;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
+
+import com.calebbrose.loofiti.MainActivity;
 
 
 public class DrawingView extends View {
@@ -49,8 +51,8 @@ public class DrawingView extends View {
 		canvasPaint = new Paint(Paint.DITHER_FLAG);
 		
 		//****Figure out where to grab the Stall to draw
-		currStallWall = new StallWall("Pearson");
-//		currStallWall.getDrawingsFromDatabase();
+		currStallWall = new StallWall(MainActivity.BuildingName);
+		currStallWall.getDrawingsFromDatabase();
 	}
 	
 	@Override

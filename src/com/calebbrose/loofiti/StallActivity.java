@@ -36,11 +36,11 @@ public class StallActivity extends Activity implements OnClickListener {
         
         /*grab building name*/
         Intent intent = getIntent();
-        String bldgName = intent.getStringExtra("building");
+        String bldg = intent.getStringExtra("building");
         
         //test if building name is correct
         TextView text = (TextView) findViewById(R.id.bldg_draw);
-		text.setText(bldgName);
+		text.setText(bldg);
 		/*end grab building name*/
         
         
@@ -128,5 +128,5 @@ public class StallActivity extends Activity implements OnClickListener {
     		newDialog.show();
     	}
     }
-
+    
 }

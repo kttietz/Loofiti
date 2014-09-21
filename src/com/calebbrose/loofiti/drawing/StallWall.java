@@ -1,9 +1,5 @@
 package com.calebbrose.loofiti.drawing;
 
-import java.io.EOFException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -34,8 +30,10 @@ public class StallWall {
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy); 
 		
-		new WallRequester().connect(
+		String retVal = new WallRequester().connect(
 				"http://173.28.253.204/Loofiti/loofiti.php?", new String[] { "x", "y", "b" }, new String[] { "30", "23", building });
+		
+		this.parseSerializedString(retVal);
 		
 		/*
 		URL url;
@@ -143,9 +141,11 @@ public class StallWall {
 	
 	void parseSerializedString(String str)
 	{
+		if (str.contains("NULL"))
+			str = "";
 		this.prevOnWall = new ArrayList<MyDrawing>();
 		
-		String[] drawings = str.split(":");
+		String[] drawings = str.replaceAll("\\s+", "").split(":");
 		for (String drawing : drawings)
 		{
 			prevOnWall.add(new MyDrawing(drawing));

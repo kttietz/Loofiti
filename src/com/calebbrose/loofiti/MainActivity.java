@@ -19,6 +19,8 @@ public class MainActivity extends ActionBarActivity {
 	ListView listView;
 	String[] bldgArray;
 	
+	public static String BuildingName = "Pearson"; // Because no time
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,15 +39,17 @@ public class MainActivity extends ActionBarActivity {
 		// Howe: x = 200, y = 200
 		// Pearson: ?? near Black
 		int x = 100, y = 150;
-		
-		String bldgList = new WallRequester()
-			.connect("http://173.28.253.204/Loofiti/loofiti.php?", new String[] { "x", "y" }, new String[] { ""+x, ""+y });
+				
+		do {
+			String bldgList = new WallRequester()
+				.connect("http://173.28.253.204/Loofiti/loofiti.php?", new String[] { "x", "y" }, new String[] { ""+x, ""+y });
+			bldgArray = bldgList.split(" ");
+		}
+		while (bldgArray.length < 1);
 		//System.out.println(bldgList);
 		
 		//TextView text = (TextView) findViewById(R.id.select_closest);
 		//text.setText(bldgList);
-		
-		bldgArray = bldgList.split(" ");
 		
 		TextView text = (TextView) findViewById(R.id.bldg_closest);
 		text.setText(bldgArray[1]);
@@ -91,6 +95,7 @@ public class MainActivity extends ActionBarActivity {
 		//send info of selected building to database, Sam takes data for deserializing
 		
 		Intent intent = new Intent(this, StallActivity.class);
+		BuildingName = bldgArray[index];
 		intent.putExtra("building", bldgArray[index]);
 		startActivity(intent);
 	}

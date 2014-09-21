@@ -17,10 +17,8 @@ public class MyPath extends Path implements Serializable {
 	}
 	
 	public MyPath(String ser)
-	{
-		this();
-		
-		String[] pairs = ser.split(";");
+	{	
+		String[] pairs = ser.split("\\*");
 		for (String pair : pairs)
 		{
 			String[] xy = pair.split(",");
@@ -57,7 +55,7 @@ public class MyPath extends Path implements Serializable {
 		String ret = "";
 		for (float[] pair : pathPoints)
 		{
-			ret += pair[0] + "," + pair[1] + ";";
+			ret += pair[0] + "," + pair[1] + "*";
 		}
 		
 		return ret;
